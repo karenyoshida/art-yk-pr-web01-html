@@ -1,0 +1,6 @@
+config.codekit3
+config.rb
+/sass/
+*_
+*~
+.DS_Store

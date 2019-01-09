@@ -1,0 +1,452 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+@font-face {
+  font-family: 'DIN Pro';
+  font-style: normal;
+  font-weight: normal;
+  src: local("DIN Pro"), url("../fonts/DINPro.woff") format("woff"); }
+@font-face {
+  font-family: 'DIN Pro Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local("DIN Pro Light"), url("../fonts/DINPro-Light.woff") format("woff"); }
+@font-face {
+  font-family: 'DIN Pro Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local("DIN Pro Medium"), url("../fonts/DINPro-Medium.woff") format("woff"); }
+@font-face {
+  font-family: 'DIN Pro Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local("DIN Pro Bold"), url("../fonts/DINPro-Bold.woff") format("woff"); }
+@font-face {
+  font-family: 'DIN Pro Black';
+  font-style: normal;
+  font-weight: normal;
+  src: local("DIN Pro Black"), url("../fonts/DINPro-Black.woff") format("woff"); }
+.wrap {
+  *zoom: 1; }
+  .wrap:after {
+    content: ".";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden; }
+
+html {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  font-size: 62.5%;
+  font-family: 'DIN Pro', "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  line-height: 1.5;
+  color: #000; }
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  -webkit-text-size-adjust: 100%;
+  word-wrap: break-word;
+  -webkit-overflow-scrolling: touch; }
+
+a {
+  color: #000;
+  text-decoration: none;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s; }
+  a:hover {
+    color: #e72626; }
+  a svg {
+    fill: currentColor; }
+
+img {
+  vertical-align: bottom;
+  max-width: 100%;
+  height: auto; }
+
+.wrap {
+  position: relative;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px; }
+
+#wrapper {
+  position: relative;
+  z-index: 10 !important; }
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }
+
+input,
+select,
+textarea {
+  -moz-appearance: none;
+  -webkit-appearance: none; }
+
+/* ===================================================================================
+
+Base Media Queries PC
+基礎 メディアクエリ PC用（ 960px 〜 ）
+
+=================================================================================== */
+.pc-only {
+  display: inherit !important; }
+
+.tb-only {
+  display: none !important; }
+
+.sp-only {
+  display: none !important; }
+
+.tb-sp {
+  display: none !important; }
+
+.pc-tb {
+  display: inherit !important; }
+
+/*================================
+	header
+================================*/
+.header {
+  padding: 25px 0;
+  background-color: #fff; }
+
+.header__wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; }
+
+.header__logo {
+  width: 120px; }
+
+.header__links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: auto; }
+
+.header__nav__list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; }
+
+.header__nav__item {
+  margin-right: 20px;
+  font-size: 1.6rem; }
+  .header__nav__item .-active {
+    color: #e72626; }
+
+.header__sns {
+  padding-left: 10px;
+  border-left: 1px solid #ccc; }
+
+/*================================
+	footer
+================================*/
+.footer {
+  padding: 30px 0;
+  background-color: #e8e8e8; }
+
+.footer__wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; }
+
+.footer__sns {
+  margin-left: auto; }
+
+.footer__pagetop {
+  position: absolute;
+  top: -70px;
+  right: 0;
+  display: block;
+  width: 32px; }
+  .footer__pagetop:hover {
+    opacity: 0.7; }
+
+/*================================
+	sns
+================================*/
+.sns__list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; }
+
+.sns__item {
+  margin-left: 10px; }
+  .sns__item img {
+    width: auto;
+    height: 16px; }
+
+/*================================
+	mainVisual
+================================*/
+.mainVisual {
+  overflow: hidden; }
+
+.mainVisual__inner {
+  position: relative; }
+
+.mainVisual__list {
+  margin-left: -100%;
+  font-size: 0;
+  white-space: nowrap; }
+
+.mainVisual__item {
+  display: inline-block; }
+
+.mainVisual__pager {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  left: 0;
+  display: none;
+  justify-content: center; }
+
+.mainVisual__pager__item {
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background-color: #333;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  cursor: pointer; }
+  .mainVisual__pager__item.-active {
+    background-color: #fff; }
+
+.mainVisual__arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  height: 30px;
+  margin: auto 0;
+  border-bottom: 2px solid #fff;
+  border-left: 2px solid #fff;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transform-origin: 50% 50%;
+  cursor: pointer; }
+  .mainVisual__arrow.-prev {
+    left: 20px; }
+  .mainVisual__arrow.-next {
+    right: 20px;
+    -moz-transform: rotate(225deg);
+    -ms-transform: rotate(225deg);
+    -webkit-transform: rotate(225deg);
+    transform: rotate(225deg); }
+
+/*================================
+	contents
+================================*/
+.contents {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 60px 0 90px;
+  background-color: #fff; }
+
+/*================================
+	home
+================================*/
+.home {
+  padding-top: 50px; }
+
+.home__wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between; }
+
+.home__col {
+  width: 48%; }
+
+.home__news__head {
+  display: flex;
+  margin-bottom: 10px; }
+
+.home__news__tab {
+  padding-right: 20px;
+  font-size: 2.2rem;
+  line-height: 1;
+  cursor: pointer; }
+  .home__news__tab + .home__news__tab {
+    padding-left: 20px;
+    border-left: 2px solid #808080; }
+  .home__news__tab.-active {
+    color: #e72626; }
+
+.home__news__body {
+  display: none; }
+
+.home__news__item {
+  border-bottom: 1px solid #e6e6e6; }
+
+.home__news__link {
+  display: block;
+  padding: 15px 0;
+  font-size: 1.4rem;
+  overflow: hidden; }
+
+.home__news__date {
+  display: block;
+  float: left;
+  width: 90px;
+  color: #666; }
+
+.home__news__txt {
+  display: block;
+  margin-left: 90px; }
+
+.home__twitter__head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2.2rem;
+  line-height: 1; }
+
+.home__twitter__name {
+  display: inline-block;
+  margin-left: auto;
+  font-size: 1.6rem;
+  color: #4c4c4c; }
+
+/*
+					<div class="home__news">
+						<div class="home__news__head">
+							<h2 class="home__news__tab -active">NEWS</h2>
+							<h2 class="home__news__tab">MEDIA</h2>
+							<h2 class="home__news__tab">LIVE/EVENT</h2>
+						<!--/.home__news__head--></div>
+						<div class="home__news__body">
+							<ul class="home__news__list">
+								<li class="home__news__item">
+									<a href="./news/" class="home__news__link">
+										<span class="home__news__date">2018.01.01</span>
+										<span class="home__news__txt">神山 羊 - YELLOW【Music Video】/ Yoh Kamiyama - YELLOW</span>
+									</a>
+								</li>
+								<li class="home__news__item">
+									<a href="./news/" class="home__news__link">
+										<span class="home__news__date">2018.01.01</span>
+										<span class="home__news__txt">神山 羊 - YELLOW【Music Video】/ Yoh Kamiyama - YELLOW</span>
+									</a>
+								</li>
+								<li class="home__news__item">
+									<a href="./news/" class="home__news__link">
+										<span class="home__news__date">2018.01.01</span>
+										<span class="home__news__txt">神山 羊 - YELLOW【Music Video】/ Yoh Kamiyama - YELLOW</span>
+									</a>
+								</li>
+								<li class="home__news__item">
+									<a href="./news/" class="home__news__link">
+										<span class="home__news__date">2018.01.01</span>
+										<span class="home__news__txt">神山 羊 - YELLOW【Music Video】/ Yoh Kamiyama - YELLOW</span>
+									</a>
+								</li>
+								<li class="home__news__item">
+									<a href="./news/" class="home__news__link">
+										<span class="home__news__date">2018.01.01</span>
+										<span class="home__news__txt">神山 羊 - YELLOW【Music Video】/ Yoh Kamiyama - YELLOW</span>
+									</a>
+								</li>
+							</ul>
+						<!--/.home__news__body--></div>
+					<!--/.home__news--></div>
+*/
+/* ===================================================================================
+
+Base Media Queries TB
+基礎 メディアクエリ タブレット用（ 〜 960px ）
+
+=================================================================================== */
+@media print, screen and (max-width: 960px) {
+  .pc-only {
+    display: none !important; }
+
+  .tb-only {
+    display: inherit !important; }
+
+  .tb-sp {
+    display: inherit !important; }
+
+  /*================================
+  	header
+  ================================*/ }
+/* ===================================================================================
+
+Base Media Queries SP
+基礎 メディアクエリ スマートフォン用（ 〜 600px ）
+
+=================================================================================== */
+@media print, screen and (max-width: 600px) {
+  .tb-only {
+    display: none !important; }
+
+  .sp-only {
+    display: inherit !important; }
+
+  .pc-tb {
+    display: none !important; }
+
+  /*================================
+  	header
+  ================================*/ }

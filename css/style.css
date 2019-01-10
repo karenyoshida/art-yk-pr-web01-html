@@ -71,15 +71,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-style: normal;
   font-weight: normal;
   src: local("DIN Pro Black"), url("../fonts/DINPro-Black.woff") format("woff"); }
-.wrap {
-  *zoom: 1; }
-  .wrap:after {
-    content: ".";
-    display: block;
-    clear: both;
-    height: 0;
-    visibility: hidden; }
-
 html {
   width: 100%;
   height: 100%;
@@ -124,7 +115,8 @@ img {
 
 #wrapper {
   position: relative;
-  z-index: 10 !important; }
+  z-index: 10 !important;
+  overflow: hidden; }
 
 *,
 *:before,
@@ -277,25 +269,39 @@ Base Media Queries PC
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
   margin: auto 0;
-  border-bottom: 2px solid #fff;
-  border-left: 2px solid #fff;
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
   transform-origin: 50% 50%;
   cursor: pointer; }
+  .mainVisual__arrow:before, .mainVisual__arrow:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 3px;
+    height: 3px;
+    background-color: #fff;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px; }
+  .mainVisual__arrow:before {
+    width: 100%; }
+  .mainVisual__arrow:after {
+    height: 100%; }
   .mainVisual__arrow.-prev {
     left: 20px; }
   .mainVisual__arrow.-next {
     right: 20px;
-    -moz-transform: rotate(225deg);
-    -ms-transform: rotate(225deg);
-    -webkit-transform: rotate(225deg);
-    transform: rotate(225deg); }
+    -moz-transform: rotate(-225deg);
+    -ms-transform: rotate(-225deg);
+    -webkit-transform: rotate(-225deg);
+    transform: rotate(-225deg); }
 
 /*================================
 	contents
@@ -328,11 +334,15 @@ Base Media Queries PC
   padding-right: 20px;
   font-size: 2.2rem;
   line-height: 1;
-  cursor: pointer; }
+  cursor: pointer;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s; }
   .home__news__tab + .home__news__tab {
     padding-left: 20px;
     border-left: 2px solid #808080; }
-  .home__news__tab.-active {
+  .home__news__tab.-active, .home__news__tab:hover {
     color: #e72626; }
 
 .home__news__body {
@@ -369,49 +379,6 @@ Base Media Queries PC
   font-size: 1.6rem;
   color: #4c4c4c; }
 
-/*
-					<div class="home__news">
-						<div class="home__news__head">
-							<h2 class="home__news__tab -active">NEWS</h2>
-							<h2 class="home__news__tab">MEDIA</h2>
-							<h2 class="home__news__tab">LIVE/EVENT</h2>
-						<!--/.home__news__head--></div>
-						<div class="home__news__body">
-							<ul class="home__news__list">
-								<li class="home__news__item">
-									<a href="./news/" class="home__news__link">
-										<span class="home__news__date">2018.01.01</span>
-										<span class="home__news__txt">神山 羊 - YELLOW【Music Video】/ Yoh Kamiyama - YELLOW</span>
-									</a>
-								</li>
-								<li class="home__news__item">
-									<a href="./news/" class="home__news__link">
-										<span class="home__news__date">2018.01.01</span>
-										<span class="home__news__txt">神山 羊 - YELLOW【Music Video】/ Yoh Kamiyama - YELLOW</span>
-									</a>
-								</li>
-								<li class="home__news__item">
-									<a href="./news/" class="home__news__link">
-										<span class="home__news__date">2018.01.01</span>
-										<span class="home__news__txt">神山 羊 - YELLOW【Music Video】/ Yoh Kamiyama - YELLOW</span>
-									</a>
-								</li>
-								<li class="home__news__item">
-									<a href="./news/" class="home__news__link">
-										<span class="home__news__date">2018.01.01</span>
-										<span class="home__news__txt">神山 羊 - YELLOW【Music Video】/ Yoh Kamiyama - YELLOW</span>
-									</a>
-								</li>
-								<li class="home__news__item">
-									<a href="./news/" class="home__news__link">
-										<span class="home__news__date">2018.01.01</span>
-										<span class="home__news__txt">神山 羊 - YELLOW【Music Video】/ Yoh Kamiyama - YELLOW</span>
-									</a>
-								</li>
-							</ul>
-						<!--/.home__news__body--></div>
-					<!--/.home__news--></div>
-*/
 /* ===================================================================================
 
 Base Media Queries TB

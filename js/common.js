@@ -25,6 +25,20 @@ $(function(){
 		});
 	});
 	
+	//resize
+	var _ww = 0;
+	$(window).on('load resize',function() {
+		if ( _ww != $(window).width() ) {
+			if ( !$('.contents').hasClass('home') ) {
+				var h = $(window).height() - $('.header').outerHeight() - $('.footer').outerHeight();
+				$('.contents').css({
+					'min-height': h
+				});
+			}
+			_ww = $(window).width()
+		}
+	});
+	
 	//mainVisual
 	var _visual = 0;
 	var _visualLen = 0;

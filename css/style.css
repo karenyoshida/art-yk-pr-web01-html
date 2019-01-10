@@ -122,7 +122,6 @@ img {
 
 #wrapper {
   position: relative;
-  height: 100%;
   z-index: 10 !important;
   overflow-x: hidden; }
 
@@ -327,7 +326,6 @@ Base Media Queries PC
 ================================*/
 .contents {
   max-width: 1040px;
-  min-height: calc(100% - 180px);
   margin: 0 auto;
   padding: 60px 0 90px;
   background-color: #fff; }
@@ -412,7 +410,6 @@ Base Media Queries PC
 	home
 ================================*/
 .home {
-  min-height: inherit;
   padding-top: 50px; }
 
 .home__wrap {

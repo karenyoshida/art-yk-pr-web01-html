@@ -343,7 +343,15 @@ Base Media Queries PC
 	button
 ================================*/
 .button {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
   text-align: center; }
+  .button.-vertical {
+    display: block; }
+    .button.-vertical .button__item + .button__item {
+      margin-top: 20px;
+      margin-left: 0; }
 
 .button__item {
   position: relative;
@@ -360,6 +368,8 @@ Base Media Queries PC
     background-color: #e72626; }
     .button__item:hover .button__txt {
       color: #fff; }
+  .button__item + .button__item {
+    margin-left: 20px; }
 
 .button__txt {
   position: relative;
@@ -593,6 +603,99 @@ Base Media Queries PC
     border-top-width: 1px;
     border-right-width: 1px; }
 
+/*================================
+	discographyList
+================================*/
+.discographyList {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: flex-start; }
+
+.discographyList__item {
+  display: block;
+  width: 25%;
+  margin-right: 12.5%;
+  text-align: center; }
+  .discographyList__item:nth-child(3n) {
+    margin-right: 0; }
+  .discographyList__item:nth-child(n + 4) {
+    margin-top: 80px; }
+
+.discographyList__thumb {
+  margin-bottom: 16px; }
+
+.discographyList__head {
+  font-size: 1.4rem; }
+
+.discographyList__title {
+  font-size: 2rem; }
+
+/*================================
+	discographyDetail
+================================*/
+.discographyDetail {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between; }
+
+.discographyDetail__col.-left {
+  width: 40%; }
+.discographyDetail__col.-right {
+  width: 55%; }
+
+.discographyDetail__thumb {
+  margin-bottom: 20px; }
+
+.discographyDetail__button {
+  margin-top: 30px; }
+
+.discographyDetail__head {
+  font-size: 1.8rem; }
+
+.discographyDetail__title {
+  font-size: 3rem; }
+
+.discographyDetail__date {
+  font-size: 1.4rem;
+  color: #666;
+  line-height: 1; }
+
+.discographyDetail__txt {
+  margin-top: 30px;
+  font-size: 1.6rem; }
+
+.discographyDetail__tracks {
+  margin-top: 30px; }
+
+.discographyDetail__tracks__head {
+  font-size: 2rem; }
+
+.discographyDetail__tracks__list {
+  margin-top: 6px;
+  border-top: 1px solid #e6e6e6; }
+
+.discographyDetail__tracks__item {
+  padding: 16px 0;
+  border-bottom: 1px solid #e6e6e6; }
+
+.discographyDetail__tracks__title {
+  font-size: 1.6rem; }
+
+.discographyDetail__tracks__txt {
+  margin-top: 2px;
+  font-size: 1.2rem;
+  color: #666; }
+
+/*
+						<div class="discographyDetail__tracks">
+							<h4 class="discographyDetail__tracks__head">TRACK LIST (Disc2)</h4>
+							<ul class="discographyDetail__tracks__list">
+								<li class="discographyDetail__tracks__item">
+									<h5 class="discographyDetail__tracks__title">1.TRCK01</h5>
+									<p class="discographyDetail__tracks__txt">作詞：〇〇〇〇　作曲：〇〇〇〇　編曲：〇〇〇〇</p>
+								</li>
+*/
 /* ===================================================================================
 
 Base Media Queries TB

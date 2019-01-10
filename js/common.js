@@ -107,9 +107,12 @@ $(function(){
 	
 	//news
 	var _news = 0;
-	$('.home__news__tab').on('click', function(){
-		_news = $('.home__news__tab').index(this);
-		changeTab();
+	$('.home__news__tab').on('click', function(e){
+		if ( !$(this).hasClass('-active') ) {
+			e.preventDefault();
+			_news = $('.home__news__tab').index(this);
+			changeTab();
+		}
 	});
 	function changeTab() {
 		$('.home__news__tab').removeClass('-active').eq(_news).addClass('-active');

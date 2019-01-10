@@ -136,9 +136,15 @@ img {
 
 input,
 select,
-textarea {
+textarea,
+button {
   -moz-appearance: none;
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+  outline: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-family: 'DIN Pro', "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
 
 /* ===================================================================================
 
@@ -360,13 +366,30 @@ Base Media Queries PC
   max-width: 300px;
   padding: 15px;
   border: 1px solid #e72626;
+  background-color: #fff;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-size: 1.8rem;
+  line-height: 1;
+  text-align: center;
+  color: #e72626;
   z-index: 1; }
   .button__item:hover {
-    background-color: #e72626; }
-    .button__item:hover .button__txt {
+    background-color: #e72626;
+    color: #fff; }
+  .button__item.-small {
+    font-size: 1.4rem;
+    line-height: 1.3; }
+  .button__item.-grey {
+    border: 1px solid #999;
+    color: #999; }
+    .button__item.-grey:hover {
+      background-color: #999;
       color: #fff; }
   .button__item + .button__item {
     margin-left: 20px; }
@@ -374,10 +397,6 @@ Base Media Queries PC
 .button__txt {
   position: relative;
   display: inline-block;
-  font-size: 1.8rem;
-  line-height: 1;
-  text-align: center;
-  color: #e72626;
   z-index: 2; }
 
 /*================================
@@ -687,15 +706,89 @@ Base Media Queries PC
   font-size: 1.2rem;
   color: #666; }
 
-/*
-						<div class="discographyDetail__tracks">
-							<h4 class="discographyDetail__tracks__head">TRACK LIST (Disc2)</h4>
-							<ul class="discographyDetail__tracks__list">
-								<li class="discographyDetail__tracks__item">
-									<h5 class="discographyDetail__tracks__title">1.TRCK01</h5>
-									<p class="discographyDetail__tracks__txt">作詞：〇〇〇〇　作曲：〇〇〇〇　編曲：〇〇〇〇</p>
-								</li>
-*/
+/*================================
+	contact
+================================*/
+.contact {
+  margin-bottom: 50px; }
+
+.contact__error {
+  margin-bottom: 24px;
+  list-style: disc inside; }
+
+.contact__error__item {
+  font-size: 1.4rem;
+  color: #e72626; }
+
+.contact__item {
+  margin-bottom: 30px; }
+  .contact__item.-required .contact__head:after {
+    content: "*";
+    margin-left: 0.2rem;
+    vertical-align: super;
+    color: #e72626; }
+
+.contact__head {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  line-height: 1; }
+
+.contact__txt {
+  font-size: 1.8rem; }
+
+.contact__input {
+  width: 100%;
+  padding: 15px;
+  background-color: #f0f0f0;
+  font-size: 1.6rem;
+  line-height: 1.875; }
+
+.contact__textarea {
+  width: 100%;
+  height: 200px;
+  padding: 15px;
+  background-color: #f0f0f0;
+  font-size: 1.6rem; }
+
+.contact__check {
+  text-align: center; }
+
+.contact__checkbox {
+  position: relative;
+  display: inline-block;
+  font-size: 1.2rem;
+  vertical-align: middle; }
+
+.contact__checkbox__item {
+  width: 20px;
+  height: 20px;
+  margin-right: 16px;
+  border: 1px solid #ccc;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 0 0 6px #fff inset;
+  -webkit-box-shadow: 0 0 6px #fff inset;
+  box-shadow: 0 0 6px #fff inset;
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2RkZGRkZCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #dddddd));
+  background: -moz-linear-gradient(#ffffff, #dddddd);
+  background: -webkit-linear-gradient(#ffffff, #dddddd);
+  background: linear-gradient(#ffffff, #dddddd);
+  vertical-align: middle; }
+  .contact__checkbox__item:checked {
+    background: url(../img/icn_checkbox.svg) no-repeat center center, url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2RkZGRkZCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+    background: url(../img/icn_checkbox.svg) no-repeat center center, -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #dddddd));
+    background: url(../img/icn_checkbox.svg) no-repeat center center, -moz-linear-gradient(#ffffff, #dddddd);
+    background: url(../img/icn_checkbox.svg) no-repeat center center, -webkit-linear-gradient(#ffffff, #dddddd);
+    background: url(../img/icn_checkbox.svg) no-repeat center center, linear-gradient(#ffffff, #dddddd);
+    background-size: 60% auto, 100% 100%; }
+
+.contact__complete {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.8rem; }
+
 /* ===================================================================================
 
 Base Media Queries TB

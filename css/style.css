@@ -437,9 +437,6 @@ Base Media Queries PC
   .home__news__tab.-active {
     color: #e72626; }
 
-.home__news__body {
-  display: none; }
-
 .home__news__item {
   border-bottom: 1px solid #e6e6e6; }
 

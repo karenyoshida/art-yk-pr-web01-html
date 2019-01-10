@@ -110,17 +110,17 @@ $(function(){
 	//news
 	var _news = 0;
 	$('.home__news__tab').on('click', function(e){
-		e.preventDefault();
 		if ( !$(this).hasClass('-active') ) {
+			//e.preventDefault();
 			_news = $('.home__news__tab').index(this);
-			changeTab();
+			//changeTab();
 		}
 	});
 	function changeTab() {
 		$('.home__news__tab').removeClass('-active').eq(_news).addClass('-active');
 		$('.home__news__body').hide().eq(_news).fadeIn(400);
 	};
-	changeTab();
+	//changeTab();
 	
 	//autoKana
 	if ( $('.contact__input')[0] ) {

@@ -121,8 +121,10 @@ $(function(){
 	changeTab();
 	
 	//autoKana
-	$.fn.autoKana('.contact__input.-name', '.contact__input.-kana', {
-		katakana : true
-	});
+	if ( $('.contact__input')[0] ) {
+		$.fn.autoKana('.contact__input.-name', '.contact__input.-kana', {
+			katakana : true
+		});
+	}
 	
 });

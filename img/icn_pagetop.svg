@@ -1,14 +1,11 @@
-<svg id="page_top" data-name="page top" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+<svg xmlns="http://www.w3.org/2000/svg" width="76" height="76" viewBox="0 0 76 76">
   <defs>
     <style>
       .cls-1 {
-        fill-opacity: 0;
-        stroke: #e72626;
-        stroke-linejoin: round;
-        stroke-width: 2px;
+        fill: #e72626;
+        fill-rule: evenodd;
       }
     </style>
   </defs>
-  <circle id="楕円形_1" data-name="楕円形 1" class="cls-1" cx="16" cy="16" r="15"/>
-  <image id="レイヤー_43_のコピー_3" data-name="レイヤー 43 のコピー 3" x="8" y="11" width="16" height="11" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAHCAYAAAA8sqwkAAAAiUlEQVQYlW2PsQ2DMBBFH5Cegh2YiAFo0yKKgJKgCJSwAQ3L0FOzQupsEJ1lSz9WvmTZ9/87+5y8y5JIF+DsrQWYNT5FcAc8pX4Bid+dUgmvERxknmU/DXdgFKj3K8gyY9xIFfCQ8CYjZHKRMYe9UAs8AJPUdjYvqM7aovgAOdAA658/bMDuGFi+7nEVpcWHfskAAAAASUVORK5CYII="/>
+  <path id="シェイプ_1" data-name="シェイプ 1" class="cls-1" d="M667,2385a38,38,0,1,1-38,38A38,38,0,0,1,667,2385Zm0,5a33,33,0,1,1-33,33A33,33,0,0,1,667,2390Zm12.688,39.8h0a2.73,2.73,0,0,1-3.806,0l-6.78-6.66a2.45,2.45,0,0,0-3.409,0l-6.78,6.66a2.73,2.73,0,0,1-3.806,0h0a2.612,2.612,0,0,1,0-3.74l8.4-8.25a5.58,5.58,0,0,1,7.771,0l8.4,8.25A2.612,2.612,0,0,1,679.688,2429.8Z" transform="translate(-629 -2385)"/>
 </svg>

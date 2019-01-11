@@ -1,3 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="16" viewBox="0 0 24 16">
-  <image id="YouTube-social-icon_dark_128px" width="24" height="16" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAQCAYAAAAMJL+VAAABAklEQVQ4jb2UMW6DMBiFvzqJFClxL5DJFTtHgCkn6AGQrOwcrOIAXeAIMCN1aiXmRNnSujIiKRGG0jb0k95i/36Wn+3/ji+2wCPwAGyAFXAPSEDg5gM4AHvgCLwBL8AT8NxesQPMjbVrb/A6wQbWExvRDDg5A/g7c5vt4jsfpRRSys74CBaiOcEgQRBQliVaa4Tou28ntffakd+VoigyZ/I8N2EYdmp6tBYDT9CJ7/ukaUqSJHie5ypp87Pz/oZ581lGUxQFcRyTZdmYJbX3qie/i+wdVFVltNZGCNGZH5D1ZjlQUEspZaSUnfERWv7LR3tvmtStsZ7Wu2ayZjdtuwY+AYzeuS5IgI1ZAAAAAElFTkSuQmCC"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="121" height="85" viewBox="0 0 121 85">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="シェイプ_1" data-name="シェイプ 1" class="cls-1" d="M118.474,13.273a15.181,15.181,0,0,0-10.7-10.736C98.339,0,60.5,0,60.5,0S22.659,0,13.222,2.537a15.182,15.182,0,0,0-10.7,10.736C0,22.742,0,42.5,0,42.5S0,62.258,2.524,71.727a15.182,15.182,0,0,0,10.7,10.736C22.659,85,60.5,85,60.5,85s37.84,0,47.277-2.537a15.181,15.181,0,0,0,10.7-10.736C121,62.258,121,42.5,121,42.5S121,22.742,118.474,13.273ZM48.4,60.714V24.285L79.836,42.5Z"/>
 </svg>

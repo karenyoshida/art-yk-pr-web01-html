@@ -261,7 +261,10 @@ Base Media Queries PC
   white-space: nowrap; }
 
 .mainVisual__item {
-  display: inline-block; }
+  display: inline-block;
+  pointer-events: none; }
+  .mainVisual__item.-active {
+    pointer-events: auto; }
 
 .mainVisual__pager {
   position: absolute;

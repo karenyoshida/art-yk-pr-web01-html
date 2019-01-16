@@ -69,12 +69,16 @@ $(function(){
 	var _visualTimer;
 	if ( $('.mainVisual')[0] ) {
 		$('.mainVisual__pager').empty();
-		$('.mainVisual__item').each(function(i){
-			$('.mainVisual__pager').append('<li class="mainVisual__pager__item"></li>');	
-		});
-		$('.mainVisual__list').prepend($('.mainVisual__item:last-child'));
 		_visualLen = $('.mainVisual__item').length - 1;
-		changeVisual();
+		if ( _visualLen > 0 ) {
+			$('.mainVisual__items__wrap').addClass('-acitve');
+			$('.mainVisual__arrow').fadeIn();
+			$('.mainVisual__item').each(function(i){
+				$('.mainVisual__pager').append('<li class="mainVisual__pager__item"></li>');	
+			});
+			$('.mainVisual__list').prepend($('.mainVisual__item:last-child'));
+			changeVisual();
+		}
 	}
 	$('.mainVisual__pager').on(clickEventType, '.mainVisual__pager__item', function(){
 		_visualPager = $('.mainVisual__pager__item').index(this) - _visual;

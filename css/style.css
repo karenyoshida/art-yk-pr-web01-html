@@ -263,11 +263,12 @@ Base Media Queries PC
   position: relative; }
 
 .mainVisual__items__wrap {
-  position: relative;
-  -moz-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%); }
+  position: relative; }
+  .mainVisual__items__wrap.-acitve {
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); }
 
 .mainVisual__list {
   position: relative;
@@ -277,9 +278,13 @@ Base Media Queries PC
 
 .mainVisual__item {
   display: inline-block;
+  width: 100%;
+  vertical-align: top;
   pointer-events: none; }
   .mainVisual__item.-active {
     pointer-events: auto; }
+  .mainVisual__item img {
+    width: 100%; }
 
 .mainVisual__pager {
   position: absolute;
@@ -305,6 +310,7 @@ Base Media Queries PC
   position: absolute;
   top: 0;
   bottom: 0;
+  display: none;
   width: 26px;
   height: 26px;
   margin: auto 0;

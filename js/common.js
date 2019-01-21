@@ -203,14 +203,14 @@ $(function(){
 		e.preventDefault();
 		if ( !$(this).hasClass('-active') ) {
 			_news = $('.home__news__tab').index(this);
-			//changeTab();
+			changeTab();
 		}
 	});
 	function changeTab() {
 		$('.home__news__tab').removeClass('-active').eq(_news).addClass('-active');
 		$('.home__news__body').hide().eq(_news).fadeIn(400);
 	};
-	//changeTab();
+	changeTab();
 	
 	$('.discographyDetail__imageTab__thumb').on(clickEventType, function(e){
 		$('.discographyDetail__imageTab__image img').attr('src', $('img', this).attr('src'));

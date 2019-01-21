@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Abel");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -46,37 +47,12 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 
-@font-face {
-  font-family: 'DIN Pro';
-  font-style: normal;
-  font-weight: normal;
-  src: local("DIN Pro"), url("../fonts/DINPro.woff") format("woff"); }
-@font-face {
-  font-family: 'DIN Pro Light';
-  font-style: normal;
-  font-weight: normal;
-  src: local("DIN Pro Light"), url("../fonts/DINPro-Light.woff") format("woff"); }
-@font-face {
-  font-family: 'DIN Pro Medium';
-  font-style: normal;
-  font-weight: normal;
-  src: local("DIN Pro Medium"), url("../fonts/DINPro-Medium.woff") format("woff"); }
-@font-face {
-  font-family: 'DIN Pro Bold';
-  font-style: normal;
-  font-weight: normal;
-  src: local("DIN Pro Bold"), url("../fonts/DINPro-Bold.woff") format("woff"); }
-@font-face {
-  font-family: 'DIN Pro Black';
-  font-style: normal;
-  font-weight: normal;
-  src: local("DIN Pro Black"), url("../fonts/DINPro-Black.woff") format("woff"); }
 html {
   width: 100%;
   height: 100%;
   background-color: #fff;
   font-size: 62.5%;
-  font-family: 'DIN Pro', "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-family: 'Abel', "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   line-height: 1.5;
   color: #000; }
 
@@ -96,10 +72,8 @@ a {
   -o-transition: all 0.3s;
   -webkit-transition: all 0.3s;
   transition: all 0.3s; }
-  a:hover {
-    color: #e72626; }
-    a:hover img {
-      opacity: 0.7; }
+  a:hover img {
+    opacity: 0.7; }
   a svg {
     fill: currentColor; }
   a img {
@@ -151,7 +125,7 @@ button {
   border: 0;
   margin: 0;
   padding: 0;
-  font-family: 'DIN Pro', "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
+  font-family: 'Abel', "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
 
 .anim {
   opacity: 0;
@@ -177,8 +151,9 @@ Base Media Queries PC
 ================================*/
 .header {
   position: relative;
-  padding: 25px 0;
+  padding: 28px 0;
   background-color: #fff;
+  border-bottom: 1px solid #e6e6e6;
   z-index: 100; }
 
 .header__wrap {
@@ -187,7 +162,7 @@ Base Media Queries PC
   justify-content: flex-start; }
 
 .header__logo {
-  width: 120px; }
+  width: 162px; }
 
 .header__links {
   display: flex;
@@ -201,14 +176,34 @@ Base Media Queries PC
   justify-content: flex-start; }
 
 .header__nav__item {
+  position: relative;
   margin-right: 20px;
-  font-size: 1.6rem; }
-  .header__nav__item .-active {
-    color: #e72626; }
+  font-size: 1.8rem; }
+  .header__nav__item a:before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    left: 0;
+    display: block;
+    width: 0;
+    height: 2px;
+    margin: 0 auto;
+    background-color: #000;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s; }
+  .header__nav__item .-active,
+  .header__nav__item a:hover {
+    color: #555; }
+    .header__nav__item .-active:before,
+    .header__nav__item a:hover:before {
+      width: 22px; }
 
 .header__sns {
   padding-left: 10px;
-  border-left: 1px solid #ccc; }
+  border-left: 1px solid #ededed; }
 
 .header__menuButton {
   display: none; }
@@ -218,7 +213,8 @@ Base Media Queries PC
 ================================*/
 .footer {
   padding: 30px 0;
-  background-color: #e8e8e8; }
+  border-top: 1px solid #e8e8e8;
+  background-color: #fff; }
 
 .footer__wrap {
   display: flex;
@@ -226,12 +222,15 @@ Base Media Queries PC
   justify-content: space-between;
   flex-direction: row-reverse; }
 
+.footer__copyright {
+  font-size: 1.1rem; }
+
 .footer__pagetop {
   position: absolute;
-  top: -70px;
+  top: -94px;
   right: 0;
   display: block;
-  width: 32px; }
+  width: 44px; }
 
 /*================================
 	sns
@@ -311,39 +310,21 @@ Base Media Queries PC
   top: 0;
   bottom: 0;
   display: none;
-  width: 26px;
-  height: 26px;
+  width: 42px;
+  height: 80px;
   margin: auto 0;
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+  background: rgba(0, 0, 0, 0.8) url(../img/icn_arrow.svg) no-repeat center center;
+  background-size: 20px auto;
   transform-origin: 50% 50%;
   cursor: pointer; }
-  .mainVisual__arrow:before, .mainVisual__arrow:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 3px;
-    height: 3px;
-    background-color: #fff;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px; }
-  .mainVisual__arrow:before {
-    width: 100%; }
-  .mainVisual__arrow:after {
-    height: 100%; }
   .mainVisual__arrow.-prev {
-    left: 20px; }
+    left: 0;
+    -moz-transform: scaleX(-1);
+    -ms-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1); }
   .mainVisual__arrow.-next {
-    right: 20px;
-    -moz-transform: rotate(-225deg);
-    -ms-transform: rotate(-225deg);
-    -webkit-transform: rotate(-225deg);
-    transform: rotate(-225deg); }
+    right: 0; }
 
 /*================================
 	contents
@@ -360,21 +341,12 @@ Base Media Queries PC
 .contents__head__inner {
   position: relative;
   display: inline-block;
-  padding-right: 96px;
+  padding: 10px 70px 10px 20px;
+  background: url(../img/bg_contents_head.png) no-repeat left center;
+  background-size: 100% 100%;
   font-size: 2rem;
   line-height: 1;
-  color: #e72626; }
-  .contents__head__inner:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    display: block;
-    width: 76px;
-    height: 8px;
-    margin: auto 0;
-    background-color: #e72626; }
+  color: #fff; }
 
 /*================================
 	button
@@ -396,7 +368,7 @@ Base Media Queries PC
   width: 100%;
   max-width: 300px;
   padding: 15px;
-  border: 1px solid #e72626;
+  border: 1px solid #000;
   background-color: #fff;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -408,10 +380,10 @@ Base Media Queries PC
   font-size: 1.8rem;
   line-height: 1;
   text-align: center;
-  color: #e72626;
+  color: #000;
   z-index: 1; }
   .button__item:hover {
-    background-color: #e72626;
+    background-color: #000;
     color: #fff; }
   .button__item.-small {
     font-size: 1.4rem;
@@ -434,53 +406,62 @@ Base Media Queries PC
 	home
 ================================*/
 .home {
-  padding-top: 50px; }
+  padding-top: 40px; }
 
 .home__wrap {
   display: flex;
-  align-items: flex-start;
   justify-content: space-between; }
 
 .home__col {
-  width: 48%; }
+  width: 48%;
+  border-bottom: 2px solid #000; }
 
 .home__news__head {
   display: flex;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  border: 2px solid #000; }
 
 .home__news__tab {
-  padding-right: 20px;
-  font-size: 2.2rem;
+  width: 100%;
+  padding: 5px;
+  font-size: 1.8rem;
+  text-align: center;
   line-height: 1; }
-  .home__news__tab + .home__news__tab {
-    padding-left: 20px;
-    border-left: 2px solid #808080; }
   .home__news__tab.-active {
-    color: #e72626; }
+    background-color: #000;
+    color: #fff; }
+  .home__news__tab + .home__news__tab {
+    border-left: 2px solid #000; }
 
 .home__news__item {
   border-bottom: 1px solid #e6e6e6; }
+  .home__news__item:last-child {
+    border-bottom: 0; }
 
 .home__news__link {
   display: block;
-  padding: 15px 0;
+  padding: 24px 0;
   font-size: 1.4rem;
   overflow: hidden; }
 
 .home__news__date {
-  display: block;
+  display: inline-block;
   float: left;
-  width: 90px;
-  color: #666; }
+  padding: 0 7px;
+  background-color: #000;
+  color: #fff; }
 
 .home__news__txt {
   display: block;
-  margin-left: 90px; }
+  margin-left: 100px; }
 
 .home__twitter__head {
   display: flex;
+  align-items: baseline;
   justify-content: space-between;
-  font-size: 2.2rem;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #000;
+  font-size: 2.4rem;
   line-height: 1; }
 
 .home__twitter__name {
@@ -553,7 +534,7 @@ Base Media Queries PC
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg); }
   .newsList__wrap:hover:before {
-    border-color: #e72626; }
+    border-color: #555; }
 
 .newsList__thumb {
   width: 24.17582%; }
@@ -567,7 +548,8 @@ Base Media Queries PC
 
 .newsList__date {
   margin-bottom: 18px;
-  font-size: 1.2rem; }
+  font-size: 1.2rem;
+  color: #666; }
 
 .newsList__txt {
   font-size: 1.4rem;
@@ -622,7 +604,7 @@ Base Media Queries PC
   position: relative;
   display: inline-block;
   padding: 10px 30px;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   line-height: 1; }
   .newsPager__item:before {
     position: absolute;
@@ -676,7 +658,7 @@ Base Media Queries PC
   font-size: 1.4rem; }
 
 .discographyList__title {
-  font-size: 2rem; }
+  font-size: 2.2rem; }
 
 /*================================
 	discographyDetail
@@ -747,7 +729,7 @@ Base Media Queries PC
 
 .contact__error__item {
   font-size: 1.4rem;
-  color: #e72626; }
+  color: #f00; }
 
 .contact__item {
   margin-bottom: 30px; }
@@ -755,7 +737,7 @@ Base Media Queries PC
     content: "*";
     margin-left: 0.2rem;
     vertical-align: super;
-    color: #e72626; }
+    color: #f00; }
 
 .contact__head {
   margin-bottom: 10px;
@@ -841,10 +823,10 @@ Base Media Queries SP
   	header
   ================================*/
   .header {
-    padding: 12px 0 13px; }
+    padding: 14px 0; }
 
   .header__logo {
-    width: 17.3913%; }
+    width: 26.08696%; }
 
   .header__links {
     display: none;
@@ -915,15 +897,15 @@ Base Media Queries SP
   	footer
   ================================*/
   .footer {
-    padding: 26px 0; }
+    padding: 26px 0 46px; }
 
   .footer__wrap {
     display: block; }
 
   .footer__copyright {
     margin-bottom: 30px;
-    font-size: 10px;
-    font-size: get_vmax(10);
+    font-size: 11px;
+    font-size: get_vmax(11);
     text-align: center; }
 
   .footer__sns {
@@ -977,33 +959,23 @@ Base Media Queries SP
       background-color: #fff; }
 
   .mainVisual__arrow {
-    width: 14px;
-    height: 14px; }
-    .mainVisual__arrow:before, .mainVisual__arrow:after {
-      width: 2px;
-      height: 2px; }
-    .mainVisual__arrow:before {
-      width: 100%; }
-    .mainVisual__arrow:after {
-      height: 100%; }
-    .mainVisual__arrow.-prev {
-      left: 4%; }
-    .mainVisual__arrow.-next {
-      right: 4%; }
+    width: 26px;
+    height: 50px;
+    background-size: 13px auto; }
 
   /*================================
   	contents
   ================================*/
   .contents {
-    padding: 40px 0; }
+    padding: 40px 0 50px; }
 
   .contents__head {
-    margin-bottom: 25px; }
+    margin-bottom: 20px; }
 
   .contents__head__inner {
-    padding-right: 86px;
-    font-size: 19px;
-    font-size: get_vmax(19); }
+    padding: 8px 58px 8px 16px;
+    font-size: 14px;
+    font-size: get_vmax(14); }
     .contents__head__inner:before {
       width: 72px;
       height: 8px; }
@@ -1042,62 +1014,45 @@ Base Media Queries SP
     display: block; }
 
   .home__col {
-    width: 100%; }
+    width: 100%;
+    border-bottom: 0; }
 
   .home__news {
-    margin-bottom: 35px; }
+    margin-bottom: 40px; }
 
   .home__news__head {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0; }
+    margin-bottom: 20px; }
 
   .home__news__tab {
-    width: 31.88406%;
-    padding: 15px;
-    border: 1px solid #808080;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    font-size: 13px;
-    font-size: get_vmax(13);
-    text-align: center; }
-    .home__news__tab + .home__news__tab {
-      padding: 15px;
-      border: 1px solid #808080; }
-    .home__news__tab.-active {
-      border: 1px solid #e72626;
-      background-color: #e72626;
-      color: #fff; }
+    padding: 13px 10px;
+    font-size: 14px;
+    font-size: get_vmax(14); }
 
   .home__news__item {
     border-bottom: 1px solid #e6e6e6; }
+    .home__news__item:last-child {
+      border-bottom: 1px solid #e6e6e6; }
 
   .home__news__link {
     display: block;
-    padding: 15px 0;
+    padding: 20px 0;
     font-size: 13px;
     font-size: get_vmax(13); }
 
-  .home__news__date {
-    display: block;
-    float: none;
-    width: auto;
-    margin-bottom: 2px;
-    color: #666;
-    font-size: 12px;
-    font-size: get_vmax(12); }
-
   .home__news__txt {
-    display: block;
-    margin-left: 0; }
+    margin-left: 7em; }
+
+  .home__twitter {
+    border-bottom: 2px solid #000; }
 
   .home__twitter__head {
-    font-size: 16px;
-    font-size: get_vmax(16); }
+    font-size: 18px;
+    font-size: get_vmax(18); }
 
   .home__twitter__name {
-    display: inline-block;
+    display: none;
     font-size: 12px;
     font-size: get_vmax(12); }
 
@@ -1137,8 +1092,10 @@ Base Media Queries SP
 
   .newsList__item {
     margin: 0 -4.34783%;
-    padding: 35px 15px; }
+    padding: 35px 15px;
+    border-top: 1px solid #e6e6e6; }
     .newsList__item + .newsList__item {
+      border-top: 0;
       padding: 35px 15px; }
 
   .newsList__wrap {
@@ -1183,7 +1140,7 @@ Base Media Queries SP
     line-height: 1.4; }
 
   .newsDetail__date {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
     font-size: 12px;
     font-size: get_vmax(12);
     color: #666; }
@@ -1216,8 +1173,8 @@ Base Media Queries SP
 
   .newsPager__item {
     padding: 10px 23px;
-    font-size: 16px;
-    font-size: get_vmax(16); }
+    font-size: 17px;
+    font-size: get_vmax(17); }
 
   /*================================
   	discographyList
@@ -1244,8 +1201,8 @@ Base Media Queries SP
     font-size: get_vmax(12); }
 
   .discographyList__title {
-    font-size: 16px;
-    font-size: get_vmax(16); }
+    font-size: 18px;
+    font-size: get_vmax(18); }
 
   /*================================
   	discographyDetail

@@ -634,13 +634,19 @@ Base Media Queries PC
   .newsDetail__article dd {
     margin-left: 2em; }
   .newsDetail__article address {
+    margin-bottom: 0;
     font-style: italic; }
   .newsDetail__article strong {
+    margin-bottom: 0;
     font-weight: bold; }
+  .newsDetail__article strike {
+    margin-bottom: 0; }
   .newsDetail__article sub {
+    margin-bottom: 0;
     vertical-align: sub;
     font-size: 0.6em; }
   .newsDetail__article sup {
+    margin-bottom: 0;
     vertical-align: super;
     font-size: 0.6em; }
   .newsDetail__article ul {

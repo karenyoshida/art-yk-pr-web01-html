@@ -591,6 +591,77 @@ Base Media Queries PC
   font-size: 1.4rem;
   line-height: 2; }
 
+.newsDetail__article {
+  font-size: 1.4rem; }
+  .newsDetail__article * {
+    margin-bottom: 2em; }
+  .newsDetail__article h1 {
+    margin-bottom: 1em;
+    font-size: 2.4rem;
+    line-height: 1.3; }
+  .newsDetail__article h2 {
+    margin-bottom: 1em;
+    font-size: 2rem;
+    line-height: 1.3; }
+  .newsDetail__article h3, .newsDetail__article h4, .newsDetail__article h5, .newsDetail__article h6 {
+    margin-bottom: 1em;
+    font-size: 1.6rem;
+    line-height: 1.3; }
+  .newsDetail__article blockquote {
+    padding: 2em;
+    border: 1px solid #e6e6e6;
+    font-style: italic; }
+    .newsDetail__article blockquote * {
+      line-height: 1.5; }
+      .newsDetail__article blockquote *:last-child {
+        margin-bottom: 0; }
+  .newsDetail__article pre {
+    padding: 2em;
+    background-color: #efefef; }
+  .newsDetail__article p {
+    line-height: 2; }
+  .newsDetail__article table {
+    width: 100%; }
+    .newsDetail__article table th, .newsDetail__article table td {
+      padding: 1em;
+      border: 1px solid #e6e6e6; }
+    .newsDetail__article table thead th, .newsDetail__article table thead td {
+      background-color: #000;
+      color: #fff;
+      text-align: center; }
+  .newsDetail__article dt {
+    margin-bottom: 1em; }
+  .newsDetail__article dd {
+    margin-left: 2em; }
+  .newsDetail__article address {
+    font-style: italic; }
+  .newsDetail__article strong {
+    font-weight: bold; }
+  .newsDetail__article sub {
+    vertical-align: sub;
+    font-size: 0.6em; }
+  .newsDetail__article sup {
+    vertical-align: super;
+    font-size: 0.6em; }
+  .newsDetail__article ul {
+    list-style: disc;
+    list-style-position: inside; }
+    .newsDetail__article ul li {
+      margin-bottom: 1em; }
+      .newsDetail__article ul li ul {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 2em; }
+  .newsDetail__article ol {
+    list-style-type: decimal;
+    list-style-position: inside; }
+    .newsDetail__article ol li {
+      margin-bottom: 1em; }
+      .newsDetail__article ol li ol {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 2em; }
+
 /*================================
 	newsPager
 ================================*/
@@ -1164,6 +1235,19 @@ Base Media Queries SP
     font-size: 13px;
     font-size: get_vmax(13);
     line-height: 1.5; }
+
+  .newsDetail__article {
+    font-size: 13px;
+    font-size: get_vmax(13); }
+    .newsDetail__article h1 {
+      font-size: 22px;
+      font-size: get_vmax(22); }
+    .newsDetail__article h2 {
+      font-size: 18px;
+      font-size: get_vmax(18); }
+    .newsDetail__article h3, .newsDetail__article h4, .newsDetail__article h5, .newsDetail__article h6 {
+      font-size: 14px;
+      font-size: get_vmax(14); }
 
   /*================================
   	newsPager

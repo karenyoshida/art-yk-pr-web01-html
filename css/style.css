@@ -930,6 +930,8 @@ Base Media Queries SP
     .header__nav__item a {
       display: block;
       padding: 15px 0; }
+      .header__nav__item a:before {
+        content: none; }
 
   .header__sns {
     padding-left: 0;

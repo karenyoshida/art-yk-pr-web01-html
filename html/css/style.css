@@ -1199,7 +1199,6 @@ Base Media Queries SP
     width: 65.625%; }
 
   .newsList__head {
-    display: none;
     margin-bottom: 2px;
     font-size: 15px;
     font-size: get_vmax(15); }
@@ -1211,6 +1210,7 @@ Base Media Queries SP
     color: #777; }
 
   .newsList__txt {
+    display: none;
     font-size: 13px;
     font-size: get_vmax(13);
     line-height: 1.4; }

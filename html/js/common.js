@@ -1,3 +1,10 @@
+TweenMax.fromTo(".header__wrap" , 0.8 , {
+	opacity: 0
+}, {
+	opacity: 1,
+	delay: 0.6
+});
+	
 $(function(){
 	// #で始まるアンカーをクリックした場合に処理
 	$('a[href^=#]').click(function() {

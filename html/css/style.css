@@ -162,7 +162,8 @@ Base Media Queries PC
   justify-content: flex-start; }
 
 .header__logo {
-  width: 162px; }
+  width: 162px;
+  height: 42px; }
 
 .header__links {
   display: flex;
@@ -426,7 +427,8 @@ Base Media Queries PC
   padding: 5px;
   font-size: 1.8rem;
   text-align: center;
-  line-height: 1; }
+  line-height: 1;
+  pointer-events: none; }
   .home__news__tab.-active {
     background-color: #000;
     color: #fff; }
@@ -631,6 +633,9 @@ Base Media Queries PC
     right: 0;
     border-top-width: 1px;
     border-right-width: 1px; }
+  .newsPager__item.-disabled {
+    opacity: 0;
+    pointer-events: none; }
 
 /*================================
 	discographyList
@@ -906,7 +911,8 @@ Base Media Queries SP
     padding: 14px 0; }
 
   .header__logo {
-    width: 26.08696%; }
+    width: 26.08696%;
+    height: auto; }
 
   .header__links {
     display: none;

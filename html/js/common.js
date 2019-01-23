@@ -1,6 +1,4 @@
-TweenMax.fromTo(".header__wrap" , 0.8 , {
-	opacity: 0
-}, {
+TweenMax.to(".header__wrap" , 0.8 , {
 	opacity: 1,
 	delay: 0.6
 });

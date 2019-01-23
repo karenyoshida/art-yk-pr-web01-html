@@ -161,6 +161,7 @@ $(function(){
 	var _beforeX = 0;
 	var _touched = false;
 	var _clicked = true;
+	if ( _visualLen > 0 ) {
 	$('.mainVisual__items').on({
 		'touchstart': function(e) {
 			this.touchX = (isTouch ? event.changedTouches[0].pageX : e.pageX);
@@ -194,6 +195,7 @@ $(function(){
 			},20);
 		}
 	});
+	}
 	$('.mainVisual__item a').on('click', function(e) {
 		e.preventDefault();
 		if ( _clicked ) {

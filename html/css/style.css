@@ -942,6 +942,7 @@ Base Media Queries SP
         content: none; }
 
   .header__sns {
+    width: auto;
     padding-left: 0;
     border-left: 0; }
 
@@ -1339,6 +1340,9 @@ Base Media Queries SP
     color: #666;
     line-height: 1;
     text-align: right; }
+
+  .discographyDetail__article {
+    margin-top: 15px; }
 
   .discographyDetail__txt {
     font-size: 13px;

@@ -75,6 +75,10 @@ $(function(){
 	if ( $('.mainVisual')[0] ) {
 		$('.mainVisual__pager').empty();
 		_visualLen = $('.mainVisual__item').length - 1;
+		if ( _visualLen == 1 ) {
+			$('.mainVisual__list').prepend($('.mainVisual__item:first-child').clone());
+			_visualLen++;
+		}
 		if ( _visualLen > 0 ) {
 			$('.mainVisual__items__wrap').addClass('-acitve');
 			$('.mainVisual__arrow').fadeIn();
@@ -160,39 +164,38 @@ $(function(){
 	var _touched = false;
 	var _clicked = true;
 	if ( _visualLen > 0 ) {
-	$('.mainVisual__items').on({
-		'touchstart': function(e) {
-			this.touchX = (isTouch ? event.changedTouches[0].pageX : e.pageX);
-			this.slideX = _beforeX = $(this).position().left;
-			// タッチ処理を開始したフラグをたてる
-			_touched = true;
-		},
-		'touchmove': function(e) {
-			if (!_touched) return;
-			this.slideX = this.slideX - (this.touchX - (isTouch ? event.changedTouches[0].pageX : e.pageX) );
-			$('.mainVisual__items').css({left:this.slideX});
-			this.touchX = (isTouch ? event.changedTouches[0].pageX : e.pageX);
-			_clicked = false;
-		},
-		'touchend': function(e) {
-			// 過剰動作の防止
-			if (!_touched) return;
-			_touched = false;
-			var _moveX = _beforeX - this.slideX;
-			console.log(_moveX, _beforeX, this.slideX);
-			$('.mainVisual__items').animate({'left':0},600);
-			if (_moveX > 20) {
-				nextVisual();
-			} else if (_moveX < -20) {
-				prevVisual();
-			} else {
-				changeVisual();
+		$('.mainVisual__items').on({
+			'touchstart': function(e) {
+				this.touchX = (isTouch ? event.changedTouches[0].pageX : e.pageX);
+				this.slideX = _beforeX = $(this).position().left;
+				// タッチ処理を開始したフラグをたてる
+				_touched = true;
+			},
+			'touchmove': function(e) {
+				if (!_touched) return;
+				this.slideX = this.slideX - (this.touchX - (isTouch ? event.changedTouches[0].pageX : e.pageX) );
+				$('.mainVisual__items').css({left:this.slideX});
+				this.touchX = (isTouch ? event.changedTouches[0].pageX : e.pageX);
+				_clicked = false;
+			},
+			'touchend': function(e) {
+				// 過剰動作の防止
+				if (!_touched) return;
+				_touched = false;
+				var _moveX = _beforeX - this.slideX;
+				$('.mainVisual__items').animate({'left':0},600);
+				if (_moveX > 20) {
+					nextVisual();
+				} else if (_moveX < -20) {
+					prevVisual();
+				} else {
+					changeVisual();
+				}
+				setTimeout(function(){
+					_clicked = true;
+				},20);
 			}
-			setTimeout(function(){
-				_clicked = true;
-			},20);
-		}
-	});
+		});
 	}
 	$('.mainVisual__item a').on('click', function(e) {
 		e.preventDefault();

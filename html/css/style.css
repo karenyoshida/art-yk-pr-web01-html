@@ -1199,6 +1199,8 @@ Base Media Queries SP
     width: 28.125%; }
 
   .newsList__overview {
+    display: flex;
+    flex-direction: column-reverse;
     width: 65.625%; }
 
   .newsList__head {

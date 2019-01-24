@@ -7,22 +7,22 @@ $(function(){
 	// #で始まるアンカーをクリックした場合に処理
 	$('a[href^=#]').click(function() {
 		// アンカーの値取得
-		var href= $(this).attr("href");
+		let href= $(this).attr("href");
 		smoothScroll(href);
 		return false;
 	});
 	function smoothScroll(href){
 		// 移動先を取得
-		var target = $(href == "#" || href == "" ? 'html' : href);
+		let target = $(href == "#" || href == "" ? 'html' : href);
 		// 移動先を数値で取得
-		var position = target.offset().top;
+		let position = target.offset().top;
 		// スムーススクロール
 		$('body,html').animate({scrollTop:position}, 600, 'swing');
 	};
 	
 	//addSVG
 	$(".loadSVG").each(function(i){
-		var $this = $(this);
+		const $this = $(this);
 		$this.after('<span class="addSVG"></span>');
 		$this.next(".addSVG").addClass($(this).attr("class")).removeClass("loadSVG");
 		$this.next(".addSVG").load($(this).attr("src"),function(){
@@ -32,6 +32,8 @@ $(function(){
 	
 	const $window  = $(window);
 	const clickEventType=((window.ontouchstart!==null)?'click':'touchend');
+	
+
 	//sp menu
 	$('.header__menuButton').on(clickEventType, function() {
 		if ($(this).hasClass('-active') ) {
@@ -52,11 +54,11 @@ $(function(){
 	});
 	
 	//resize
-	var _ww = 0;
+	let _ww = 0;
 	$window.on('load resize',function() {
 		if ( _ww != $window.width() ) {
 			if ( !$('.contents').hasClass('home') ) {
-				var h = $window.height() - $('.header').outerHeight() - $('.footer').outerHeight();
+				let h = $window.height() - $('.header').outerHeight() - $('.footer').outerHeight();
 				if ( $('.contents').height() < h ) {
 					$('.contents').css({
 						'min-height': h
@@ -68,10 +70,10 @@ $(function(){
 	});
 	
 	//mainVisual
-	var _visual = 0;
-	var _visualLen = 0;
-	var _visualPager = 0;
-	var _visualTimer;
+	let _visual = 0;
+	let _visualLen = 0;
+	let _visualPager = 0;
+	let _visualTimer;
 	if ( $('.mainVisual')[0] ) {
 		$('.mainVisual__pager').empty();
 		_visualLen = $('.mainVisual__item').length - 1;
@@ -86,7 +88,42 @@ $(function(){
 				$('.mainVisual__pager').append('<li class="mainVisual__pager__item"></li>');	
 			});
 			$('.mainVisual__list').prepend($('.mainVisual__item:last-child'));
-			changeVisual();
+		}
+		//opening
+		if ( sessionStorage.getItem('opening') ) {
+			$('#wrapper').removeClass('-fixed');
+			$('.opening').remove();
+			if ( _visualLen > 0 ) {
+				changeVisual();
+			}
+		} else {
+			TweenMax.to('.opening__cover' , 0.4 , {
+				x: 500,
+				delay: 1,
+				ease: Power2.easeInOut,
+				onComplete: function(){
+					TweenMax.fromTo('.opening__cover' , 0.4 , {
+						x: -500
+					}, {
+						x: 0,
+						delay: 1,
+						ease: Power2.easeInOut
+					});
+					TweenMax.to('.opening' , 0.4 , {
+						x: $window.width(),
+						delay: 1.3,
+						ease: Power2.easeInOut,
+						onComplete: function(){
+							$('#wrapper').removeClass('-fixed');
+							$('.opening').remove();
+							sessionStorage.setItem('opening', 1);
+							if ( _visualLen > 0 ) {
+								changeVisual();
+							}
+						}
+					});
+				}
+			});
 		}
 	}
 	$('.mainVisual__pager').on(clickEventType, '.mainVisual__pager__item', function(){
@@ -159,10 +196,10 @@ $(function(){
 		},6000);
 	};
 	
-	var isTouch = ('ontouchstart' in window);
-	var _beforeX = 0;
-	var _touched = false;
-	var _clicked = true;
+	const isTouch = ('ontouchstart' in window);
+	let _beforeX = 0;
+	let _touched = false;
+	let _clicked = true;
 	if ( _visualLen > 0 ) {
 		$('.mainVisual__items').on({
 			'touchstart': function(e) {
@@ -182,7 +219,7 @@ $(function(){
 				// 過剰動作の防止
 				if (!_touched) return;
 				_touched = false;
-				var _moveX = _beforeX - this.slideX;
+				let _moveX = _beforeX - this.slideX;
 				$('.mainVisual__items').animate({'left':0},600);
 				if (_moveX > 20) {
 					nextVisual();
@@ -208,7 +245,7 @@ $(function(){
 	});
 		
 	//news
-	var _news = 0;
+	let _news = 0;
 	$('.home__news__tab').on(clickEventType, function(e){
 		e.preventDefault();
 		if ( !$(this).hasClass('-active') ) {
@@ -245,10 +282,10 @@ $(function(){
 		opacity: 0
 	});
 	$window.on("load scroll",function(){
-		var sT = $window.scrollTop() + $window.height() * 0.9;
-		var count = 0;
+		let sT = $window.scrollTop() + $window.height() * 0.9;
+		let count = 0;
 		$(".anim").each(function(i){
-			var $this = $(this);
+			let $this = $(this);
 			if ( sT > $this.offset().top && $window.scrollTop() < $this.offset().top) {
 				count++;
 				TweenMax.to($this , 0 , {

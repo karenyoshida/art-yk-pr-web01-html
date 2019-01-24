@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="13" viewBox="0 0 48 13">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 19.532px;
+        fill: #fff;
+        text-anchor: middle;
+        font-family: DINNextLTPro;
+        font-weight: 800;
+      }
+    </style>
+  </defs>
+  <text id="SHOP" class="cls-1" transform="translate(23.834 12.574) scale(0.973 0.962)"><tspan x="0">SHOP</tspan></text>
+</svg>

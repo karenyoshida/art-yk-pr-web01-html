@@ -1,0 +1,16 @@
+<svg id="icn_play" xmlns="http://www.w3.org/2000/svg" width="91.938" height="91.94" viewBox="0 0 91.938 91.94">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0.5;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <circle id="楕円形_1" data-name="楕円形 1" class="cls-1" cx="45.969" cy="45.97" r="45.969"/>
+  <path id="シェイプ_1" data-name="シェイプ 1" class="cls-2" d="M399.693,2107.1l-32.764-18.91V2126Z" transform="translate(-333.562 -2061.12)"/>
+</svg>

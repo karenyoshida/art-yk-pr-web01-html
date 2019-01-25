@@ -142,24 +142,30 @@ Base Media Queries PC
 	header
 ================================*/
 .header {
+  position: relative;
+  background: #000 url(../img/mv.jpg) repeat-x center center;
+  background-size: auto 100%;
+  text-align: center; }
+
+.header__logo {
+  text-align: center; }
+  .header__logo img {
+    margin: 0 auto; }
+
+.header__wrap {
   position: absolute;
   top: 0;
   right: 0;
+  bottom: 0;
   left: 0;
-  padding: 32px 0;
-  z-index: 1000; }
+  max-width: 1140px; }
 
-.header__wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1110px; }
-
-.header__logo {
-  width: 162px; }
-
-.header__sns .sns__item {
-  margin-left: 10px; }
+.header__sns {
+  padding-top: 32px; }
+  .header__sns.sns {
+    justify-content: flex-end; }
+  .header__sns .sns__item {
+    margin-left: 10px; }
 
 /*================================
 	sns
@@ -171,29 +177,6 @@ Base Media Queries PC
 
 .sns__item {
   width: 28px; }
-
-/*================================
-	mainVisual
-================================*/
-.mainVisual {
-  position: relative;
-  height: 666px;
-  background: #000 url(../img/mv.jpg) repeat-x center center;
-  background-size: auto 100%; }
-
-.mainVisual__wrap {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 68px 0; }
-
-.mainVisual__logo {
-  width: 698px; }
 
 /*================================
 	album
@@ -411,10 +394,7 @@ Base Media Queries PC
 ================================*/
 .shop {
   padding: 100px 0;
-  background-image: url(../img/bg_shop.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover; }
+  background-color: #e6e6e6; }
 
 .shop__head {
   max-width: 344px;
@@ -496,6 +476,34 @@ Base Media Queries PC
     -ms-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg); }
+
+/*================================
+	live
+================================*/
+.live {
+  padding: 0 0 140px;
+  background-color: #e6e6e6; }
+
+.live__head {
+  max-width: 344px;
+  margin: 0 auto 7em;
+  text-align: center; }
+
+.live__wrap {
+  max-width: 640px; }
+
+.live__head1 {
+  margin-bottom: 0.2em;
+  font-size: 2.6rem; }
+
+.live__head2 {
+  margin-bottom: 0.2em;
+  font-size: 2.0rem; }
+
+.live__txt {
+  margin-bottom: 1em;
+  font-size: 1.4rem;
+  line-height: 2.2; }
 
 /*================================
 	footer
@@ -598,12 +606,6 @@ Base Media Queries SP
   /*================================
   	header
   ================================*/
-  .header {
-    padding: 20px 0; }
-
-  .header__logo {
-    width: 23.47826%; }
-
   .header__sns {
     display: none; }
 
@@ -612,21 +614,6 @@ Base Media Queries SP
   ================================*/
   .sns__item {
     width: 40px; }
-
-  /*================================
-  	mainVisual
-  ================================*/
-  .mainVisual {
-    height: auto;
-    padding-top: 97.86667%;
-    background: #000 url(../img/mv_sp.jpg) no-repeat center center;
-    background-size: cover; }
-
-  .mainVisual__wrap {
-    padding: 3em 15px; }
-
-  .mainVisual__logo {
-    width: 100%; }
 
   /*================================
   	album
@@ -830,6 +817,36 @@ Base Media Queries SP
       height: 7px; }
     .shop__button img {
       width: 20%; }
+
+  /*================================
+  	live
+  ================================*/
+  .live {
+    padding: 3em 0 6em; }
+
+  .live__head {
+    max-width: none;
+    width: 49.85507%;
+    margin: 0 auto 3.5em; }
+
+  .live__wrap {
+    margin: 0 15px; }
+
+  .live__head1 {
+    margin-bottom: 0.2em;
+    font-size: 18px;
+    font-size: get_vmax(18); }
+
+  .live__head2 {
+    margin-bottom: 0.2em;
+    font-size: 15px;
+    font-size: get_vmax(15); }
+
+  .live__txt {
+    margin-bottom: 1em;
+    font-size: 12px;
+    font-size: get_vmax(12);
+    line-height: 1.8; }
 
   /*================================
   	footer

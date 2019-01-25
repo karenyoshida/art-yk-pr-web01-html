@@ -60,7 +60,6 @@ $(function(){
 	
 	
 	//スクロール処理
-	var _timer;
 	function scrollAnim() {
 		var sT = $window.scrollTop() + $window.height() * 0.9;
 		var count = 0;
@@ -85,7 +84,7 @@ $(function(){
 		});
 	};
 	
-	$window.on('scroll',function(){
+	$window.on('scroll', function(e){
 		scrollAnim();
 	});
 	

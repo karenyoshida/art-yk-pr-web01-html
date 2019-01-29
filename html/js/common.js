@@ -78,8 +78,9 @@ $(function(){
 		$('.mainVisual__pager').empty();
 		_visualLen = $('.mainVisual__item').length - 1;
 		if ( _visualLen == 1 ) {
-			$('.mainVisual__list').prepend($('.mainVisual__item:first-child').clone());
-			_visualLen++;
+			$('.mainVisual__list').append($('.mainVisual__item').eq(0).clone());
+			$('.mainVisual__list').append($('.mainVisual__item').eq(1).clone());
+			_visualLen += 2;
 		}
 		if ( _visualLen > 0 ) {
 			$('.mainVisual__items__wrap').addClass('-acitve');

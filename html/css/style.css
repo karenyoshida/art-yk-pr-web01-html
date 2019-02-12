@@ -151,7 +151,7 @@ Base Media Queries PC
 ================================*/
 .header {
   position: relative;
-  padding: 28px 0;
+  padding: 33px 0;
   background-color: #fff;
   border-bottom: 1px solid #e6e6e6;
   z-index: 100; }
@@ -163,8 +163,7 @@ Base Media Queries PC
   opacity: 0; }
 
 .header__logo {
-  width: 162px;
-  height: 42px; }
+  width: 221px; }
 
 .header__links {
   display: flex;
@@ -507,7 +506,6 @@ Base Media Queries PC
 .profile__name {
   margin-bottom: 20px;
   font-size: 3.4rem;
-  font-weight: bold;
   line-height: 1; }
 
 .profile__en {
@@ -965,7 +963,7 @@ Base Media Queries SP
     padding: 14px 0; }
 
   .header__logo {
-    width: 26.08696%;
+    width: 34.78261%;
     height: auto; }
 
   .header__links {

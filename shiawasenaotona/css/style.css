@@ -552,11 +552,11 @@ Base Media Queries PC
 
 .live__head2 {
   margin-bottom: 0.2em;
-  font-size: 2.0rem; }
+  font-size: 1.8rem; }
 
 .live__txt {
   margin-bottom: 1em;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   line-height: 2.2; }
 
 /*================================
@@ -792,8 +792,11 @@ Base Media Queries SP
     padding: 1.5em; }
 
   .album__trackList__head {
-    margin-bottom: 3em;
+    margin-bottom: 1.5em;
     width: 27.01754%; }
+
+  .album__trackList__wrap {
+    display: block; }
 
   .album__trackList__list {
     margin: 0 1em; }
@@ -804,6 +807,8 @@ Base Media Queries SP
     font-size: get_vmax(13); }
 
   .album__trackList__notes {
+    margin-top: -1.8em;
+    padding-top: 0;
     font-size: 13px;
     font-size: get_vmax(13); }
 
@@ -912,7 +917,8 @@ Base Media Queries SP
     margin: 0 auto 3.5em; }
 
   .live__wrap {
-    margin: 0 15px; }
+    margin: 0 15px;
+    width: auto; }
 
   .live__head1 {
     margin-bottom: 0.2em;

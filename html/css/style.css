@@ -847,6 +847,8 @@ Base Media Queries PC
   .contribution br {
     margin-bottom: 0;
     line-height: initial; }
+  .contribution a {
+    text-decoration: underline; }
   .contribution * {
     margin-bottom: 2em; }
   .contribution h1 {

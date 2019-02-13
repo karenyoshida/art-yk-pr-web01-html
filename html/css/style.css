@@ -844,13 +844,13 @@ Base Media Queries PC
 ================================*/
 .contribution {
   font-size: 1.4rem; }
-  .contribution br {
-    margin-bottom: 0;
-    line-height: initial; }
   .contribution a {
     text-decoration: underline; }
   .contribution * {
     margin-bottom: 2em; }
+  .contribution br {
+    margin-bottom: 0 !important;
+    line-height: initial !important; }
   .contribution h1 {
     margin-bottom: 1em;
     font-size: 2.4rem;

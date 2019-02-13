@@ -183,7 +183,7 @@ $(function(){
 				y: 0,
 				ease: Power2.easeInOut
 			});
-			TweenMax.fromTo('.album__slider__item.-item3' , _duration , {
+			TweenMax.fromTo('.album__slider__item.-item2' , _duration , {
 				scale: 2,
 				x: -250,
 				y: 160
@@ -193,7 +193,7 @@ $(function(){
 				y: 0,
 				ease: Power2.easeInOut
 			});
-			TweenMax.fromTo('.album__slider__item.-item2' , _duration , {
+			TweenMax.fromTo('.album__slider__item.-item3' , _duration , {
 				x: -250
 			}, {
 				x: 0,

@@ -77,12 +77,9 @@ $(function(){
 	if ( $('.mainVisual')[0] ) {
 		$('.mainVisual__pager').empty();
 		_visualLen = $('.mainVisual__item').length - 1;
-		if ( _visualLen == 1 ) {
-			$('.mainVisual__list').append($('.mainVisual__item').eq(0).clone());
-			$('.mainVisual__list').append($('.mainVisual__item').eq(1).clone());
-			_visualLen += 2;
-		}
 		if ( _visualLen > 0 ) {
+			$('.mainVisual__list').append($('.mainVisual__item').clone());
+			_visualLen = $('.mainVisual__item').length - 1;
 			$('.mainVisual__items__wrap').addClass('-acitve');
 			$('.mainVisual__arrow').fadeIn();
 			$('.mainVisual__item').each(function(i){

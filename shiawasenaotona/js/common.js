@@ -71,15 +71,22 @@ $(function(){
 		albumPrev();
 	});
 	
+	let album = 0;
+	
 	function albumPrev(){
-		$('.album__slider__items').append($('.album__slider__item').eq(0));
-		$('.album__slider__item').removeClass('-item1');
-		$('.album__slider__item').removeClass('-item2');
-		$('.album__slider__item').removeClass('-item3');
-		$('.album__slider__item').each(function(i) {
-			$(this).addClass('-item' + ( i + 1 ));
-		});
+		album--;
+		if ( album < 0 ) {
+			album = $('.album__slider__item').length - 1;
+		}
+		$('.album__bg__item').removeClass('-active').eq(album).addClass('-active');
 		if ( _device == 'pc' ) {
+			$('.album__slider__items').append($('.album__slider__item').eq(0));
+			$('.album__slider__item').removeClass('-item1');
+			$('.album__slider__item').removeClass('-item2');
+			$('.album__slider__item').removeClass('-item3');
+			$('.album__slider__item').each(function(i) {
+				$(this).addClass('-item' + ( i + 1 ));
+			});
 			TweenMax.fromTo('.album__slider__item.-item1' , _duration , {
 				scale: 0.5,
 				x: 290,
@@ -103,6 +110,13 @@ $(function(){
 				ease: Power2.easeInOut
 			});
 		} else {
+			$('.album__slider__items').prepend($('.album__slider__item').eq(-1));
+			$('.album__slider__item').removeClass('-item1');
+			$('.album__slider__item').removeClass('-item2');
+			$('.album__slider__item').removeClass('-item3');
+			$('.album__slider__item').each(function(i) {
+				$(this).addClass('-item' + ( i + 1 ));
+			});
 			TweenMax.fromTo('.album__slider__item.-item1' , _duration , {
 				scale: 0.5,
 				x: -290
@@ -111,13 +125,13 @@ $(function(){
 				x: 0,
 				ease: Power2.easeInOut
 			});
-			TweenMax.fromTo('.album__slider__item.-item2' , _duration , {
+			TweenMax.fromTo('.album__slider__item.-item3' , _duration , {
 				x: -250
 			}, {
 				x: 0,
 				ease: Power2.easeInOut
 			});
-			TweenMax.fromTo('.album__slider__item.-item3' , _duration , {
+			TweenMax.fromTo('.album__slider__item.-item2' , _duration , {
 				scale: 2,
 				x: -250
 			}, {
@@ -137,14 +151,19 @@ $(function(){
 	});
 	
 	function albumNext(){
-		$('.album__slider__items').prepend($('.album__slider__item').eq(-1));
-		$('.album__slider__item').removeClass('-item1');
-		$('.album__slider__item').removeClass('-item2');
-		$('.album__slider__item').removeClass('-item3');
-		$('.album__slider__item').each(function(i) {
-			$(this).addClass('-item' + ( i + 1 ));
-		});
+		album++;
+		if ( album > $('.album__slider__item').length - 1 ) {
+			album = 0;
+		}
+		$('.album__bg__item').removeClass('-active').eq(album).addClass('-active');
 		if ( _device == 'pc' ) {
+			$('.album__slider__items').prepend($('.album__slider__item').eq(-1));
+			$('.album__slider__item').removeClass('-item1');
+			$('.album__slider__item').removeClass('-item2');
+			$('.album__slider__item').removeClass('-item3');
+			$('.album__slider__item').each(function(i) {
+				$(this).addClass('-item' + ( i + 1 ));
+			});
 			TweenMax.fromTo('.album__slider__item.-item1' , _duration , {
 				scale: 0.5,
 				x: -290,
@@ -155,7 +174,7 @@ $(function(){
 				y: 0,
 				ease: Power2.easeInOut
 			});
-			TweenMax.fromTo('.album__slider__item.-item2' , _duration , {
+			TweenMax.fromTo('.album__slider__item.-item3' , _duration , {
 				scale: 2,
 				x: -250,
 				y: 160
@@ -165,13 +184,20 @@ $(function(){
 				y: 0,
 				ease: Power2.easeInOut
 			});
-			TweenMax.fromTo('.album__slider__item.-item3' , _duration , {
+			TweenMax.fromTo('.album__slider__item.-item2' , _duration , {
 				x: -250
 			}, {
 				x: 0,
 				ease: Power2.easeInOut
 			});
 		} else {
+			$('.album__slider__items').append($('.album__slider__item').eq(0));
+			$('.album__slider__item').removeClass('-item1');
+			$('.album__slider__item').removeClass('-item2');
+			$('.album__slider__item').removeClass('-item3');
+			$('.album__slider__item').each(function(i) {
+				$(this).addClass('-item' + ( i + 1 ));
+			});
 			TweenMax.fromTo('.album__slider__item.-item1' , _duration , {
 				scale: 0.5,
 				x: 290
@@ -196,6 +222,10 @@ $(function(){
 			});
 		}
 	};
+	
+	setTimeout(function(){
+		$('.album__slider__arrow').height( $('.album__slider__item.-item1 .album__slider__thumb').height() );
+	},2000);
 	
 	var isTouch = ('ontouchstart' in window);
 	var _beforeX = 0;

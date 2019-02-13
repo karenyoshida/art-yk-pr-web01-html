@@ -209,7 +209,6 @@ $(function(){
 			'touchmove': function(e) {
 				if (!_touched) return;
 				this.slideX = this.slideX - (this.touchX - (isTouch ? event.changedTouches[0].pageX : e.pageX) );
-				$('.mainVisual__items').css({left:this.slideX});
 				this.touchX = (isTouch ? event.changedTouches[0].pageX : e.pageX);
 				_clicked = false;
 			},
@@ -218,7 +217,6 @@ $(function(){
 				if (!_touched) return;
 				_touched = false;
 				let _moveX = _beforeX - this.slideX;
-				$('.mainVisual__items').animate({'left':0},600);
 				if (_moveX > 20) {
 					nextVisual();
 				} else if (_moveX < -20) {

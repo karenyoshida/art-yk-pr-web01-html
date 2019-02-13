@@ -80,12 +80,11 @@ $(function(){
 	let album = 0;
 	
 	function albumPrev(){
-		album--;
-		if ( album < 0 ) {
-			album = $('.album__slider__item').length - 1;
-		}
-		$('.album__bg__item').removeClass('-active').eq(album).addClass('-active');
 		if ( _device == 'pc' ) {
+			album++;
+			if ( album > $('.album__slider__item').length - 1 ) {
+				album = 0;
+			}
 			$('.album__slider__items').append($('.album__slider__item').eq(0));
 			$('.album__slider__item').removeClass('-item1');
 			$('.album__slider__item').removeClass('-item2');
@@ -116,6 +115,10 @@ $(function(){
 				ease: Power2.easeInOut
 			});
 		} else {
+			album--;
+			if ( album < 0 ) {
+				album = $('.album__slider__item').length - 1;
+			}
 			$('.album__slider__items').prepend($('.album__slider__item').eq(-1));
 			$('.album__slider__item').removeClass('-item1');
 			$('.album__slider__item').removeClass('-item2');
@@ -146,6 +149,7 @@ $(function(){
 				ease: Power2.easeInOut
 			});
 		}
+		$('.album__bg__item').removeClass('-active').eq(album).addClass('-active');
 	};
 	
 	$(document).on(clickEventType, '.album__slider__item.-item3', function() {
@@ -157,12 +161,11 @@ $(function(){
 	});
 	
 	function albumNext(){
-		album++;
-		if ( album > $('.album__slider__item').length - 1 ) {
-			album = 0;
-		}
-		$('.album__bg__item').removeClass('-active').eq(album).addClass('-active');
 		if ( _device == 'pc' ) {
+			album--;
+			if ( album < 0 ) {
+				album = $('.album__slider__item').length - 1;
+			}
 			$('.album__slider__items').prepend($('.album__slider__item').eq(-1));
 			$('.album__slider__item').removeClass('-item1');
 			$('.album__slider__item').removeClass('-item2');
@@ -197,6 +200,10 @@ $(function(){
 				ease: Power2.easeInOut
 			});
 		} else {
+			album++;
+			if ( album > $('.album__slider__item').length - 1 ) {
+				album = 0;
+			}
 			$('.album__slider__items').append($('.album__slider__item').eq(0));
 			$('.album__slider__item').removeClass('-item1');
 			$('.album__slider__item').removeClass('-item2');
@@ -227,6 +234,7 @@ $(function(){
 				ease: Power2.easeInOut
 			});
 		}
+		$('.album__bg__item').removeClass('-active').eq(album).addClass('-active');
 	};
 	
 	

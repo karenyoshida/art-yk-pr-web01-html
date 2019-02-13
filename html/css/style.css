@@ -290,10 +290,7 @@ Base Media Queries PC
 .mainVisual__item {
   display: inline-block;
   width: 100%;
-  vertical-align: top;
-  pointer-events: none; }
-  .mainVisual__item.-active {
-    pointer-events: auto; }
+  vertical-align: top; }
   .mainVisual__item img {
     width: 100%; }
 

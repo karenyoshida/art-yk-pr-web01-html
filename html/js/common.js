@@ -230,12 +230,6 @@ $(function(){
 			}
 		});
 	}
-	$('.mainVisual__item a').on('click', function(e) {
-		e.preventDefault();
-		if ( _clicked ) {
-			location.href = $(this).attr('href');
-		}
-	});
 	$(document).on('mouseup', function(){
 		_touched = false;
 	});

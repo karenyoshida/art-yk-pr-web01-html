@@ -433,28 +433,32 @@ Base Media Queries PC
   position: relative;
   width: 100%;
   padding: 5px;
-  border: 2px solid #ccc;
-  background-color: #b3b3b3;
+  border: 2px solid #000;
+  background-color: #fff;
   font-size: 1.8rem;
   text-align: center;
   line-height: 1;
-  color: #fff;
-  pointer-events: none; }
-  .home__news__tab:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: block;
-    width: 110px;
-    height: 2px;
-    margin: auto;
-    background-color: #fff; }
+  color: #000; }
+  .home__news__tab.-disabled {
+    background-color: #b3b3b3;
+    color: #fff;
+    pointer-events: none; }
+    .home__news__tab.-disabled:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 110px;
+      height: 2px;
+      margin: auto;
+      background-color: #fff; }
   .home__news__tab.-active {
     border-color: #000;
-    background-color: #000; }
+    background-color: #000;
+    color: #fff; }
     .home__news__tab.-active:before {
       content: none; }
   .home__news__tab + .home__news__tab {

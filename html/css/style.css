@@ -874,7 +874,8 @@ Base Media Queries PC
         margin-bottom: 0; }
   .contribution pre {
     padding: 2em;
-    background-color: #efefef; }
+    background-color: #efefef;
+    white-space: normal; }
   .contribution p {
     line-height: 2; }
   .contribution table {

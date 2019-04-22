@@ -546,7 +546,7 @@ Base Media Queries PC
 	live
 ================================*/
 .live {
-  padding: 0 0 140px;
+  padding: 0 0 100px;
   background-color: #e6e6e6; }
 
 .live__head {
@@ -949,7 +949,7 @@ Base Media Queries SP
   	live
   ================================*/
   .live {
-    padding: 3em 0 6em; }
+    padding: 3em 0; }
 
   .live__head {
     max-width: none;
@@ -980,16 +980,12 @@ Base Media Queries SP
   	goods
   ================================*/
   .goods {
-    padding: 3em 0 6em; }
+    padding: 0 0 6em; }
 
   .goods__head {
     max-width: none;
     width: 49.85507%;
     margin: 0 auto 3.5em; }
-
-  .goods__wrap {
-    margin: 0 15px;
-    width: auto; }
 
   /*================================
   	footer

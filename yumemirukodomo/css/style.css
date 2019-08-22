@@ -171,11 +171,19 @@ Base Media Queries PC
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 1280px;
   min-width: 1010px;
-  margin: 0 auto;
   pointer-events: none;
   z-index: 1; }
+
+.bg__inner {
+  width: 100%;
+  max-width: 1280px;
+  background: url(../img/bg_anime.gif) no-repeat center top;
+  background-size: 100% auto; }
+  .bg__inner::before {
+    content: "";
+    display: block;
+    padding-top: 64.05694%; }
 
 /*================================
 	section
@@ -758,6 +766,7 @@ Base Media Queries SP
   	tokuten
   ================================*/
   .tokuten__item {
+    position: relative;
     width: 47.61905%;
     margin-right: 4.7619%;
     margin-bottom: 25px; }
@@ -765,6 +774,10 @@ Base Media Queries SP
       margin-right: 4.7619%; }
     .tokuten__item:nth-of-type(even) {
       margin-right: 0; }
+    .tokuten__item::after {
+      content: "";
+      display: block;
+      padding-bottom: 29.66667%; }
 
   .tokuten__item__img {
     margin-bottom: 10px; }
@@ -775,10 +788,15 @@ Base Media Queries SP
     font-size: get_vmax(10);
     text-align: left; }
 
-  .tokuten__item__btn img:hover {
-    opacity: 1; }
-  .tokuten__item__btn.-amazon, .tokuten__item__btn.-tower, .tokuten__item__btn.-tsutaya, .tokuten__item__btn.-animate, .tokuten__item__btn.-hmv {
-    background-image: none; }
+  .tokuten__item__btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0; }
+    .tokuten__item__btn img:hover {
+      opacity: 1; }
+    .tokuten__item__btn.-amazon, .tokuten__item__btn.-tower, .tokuten__item__btn.-tsutaya, .tokuten__item__btn.-animate, .tokuten__item__btn.-hmv {
+      background-image: none; }
 
   /*================================
   	info

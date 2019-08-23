@@ -20,26 +20,6 @@ $(function(){
 		$('body,html').animate({scrollTop:position}, 600, 'swing');
 	};
 
-	//pc/sp
-	var _device = 'pc';
-	var _ww = 0;
-	var _timer;
-	$window.on('load resize',function(){
-		if ( _ww != $window.width() ) {
-			if ( $('.pc-only').eq(0).is(':visible') ) {
-				_device = 'pc';
-			} else {
-				_device = 'sp';
-			}
-			clearTimeout(_timer);
-			$('.album__slider__arrow').removeClass('-active');
-			_timer = setTimeout(function(){
-				$('.album__slider__arrow').height( $('.album__slider__item.-item1 .album__slider__thumb').height() ).addClass('-active');
-			},2000);
-			_ww = $window.width();
-		}
-	});
-
 	//スクロール処理
 	function scrollAnim() {
 		var sT = $window.scrollTop() + $window.height() * 0.9;
@@ -68,49 +48,80 @@ $(function(){
 		} else {
 			$('#floatNav').attr('data-active', false);
 		}
-		if ( $('.header').outerHeight() > $window.scrollTop() ) {
-			TweenMax.to('.bg' , 0 , {
-				y: $('.header').outerHeight() - $window.scrollTop()
-			});
-		} else {
-			TweenMax.to('.bg' , 0 , {
-				y: 0
-			});
-		}
 	};
 
 	var _scrollFlg = false;
 	var _scrollTimer;
-	var _animTimer;
-	var _animState = 0;
-	var _animNum = 36;
 
 	$window.on('load scroll touchmove', function(e){
 		_scrollFlg = true;
 		scrollAnim();
-		var _contentsH = $('#wrapper').height() - $window.height();
-		var _scrollT = $window.scrollTop();
-		var _bgH = -$('.bg__inner').outerHeight();
-		var _animNextState = Math.floor(_scrollT / _contentsH * _animNum);
-		clearInterval(_animTimer);
-		_animTimer = setInterval(function(){
-				if ( _animState < _animNextState ) {
-					_animState++;
-				} else if ( _animState > _animNextState ) {
-					_animState--;
-				} else {
-					clearInterval(_animTimer);
-				}
-				$(".bg__inner").css({
-					"background-position": "center " + _animState * _bgH + "px"
-				});
-		}, 30);
-		console.log(_scrollT);
 		_scrollTimer = setTimeout( function () {
 			_scrollFlg = false;
 		}, 500 ) ;
 	});
 
+	//bg
+	var _animTimer1;
+	var _animTimer2;
+	var _animState = 0;
+	var _animNum = 36 + 3;
+	var _scrollT = 0;
+
+	$window.on('load', function(e){
+		for(var i = 0; i <= 36; i++) {
+			$('.bg__inner').append('<div class="bg__inner__item"><!--/.bg__inner__item--></div>');
+			$('.bg__inner__item').eq(i).css({
+				'background-image': 'url(../img/bg_anime' + ( i + 1 ) + '.gif)'
+			});
+		}
+		$('.bg__inner__item').attr('data-active', false).eq(0).attr('data-active', true);
+	});
+
+	function bgAnim() {
+		_animTimer1 = setInterval(function(){
+			if ( _scrollT != $window.scrollTop() ) {
+				clearInterval(_animTimer1);
+				clearInterval(_animTimer2);
+				_scrollT = $window.scrollTop();
+				var _contentsH = $('#wrapper').height() - $window.height();
+				var _animNextState = Math.floor(_scrollT / _contentsH * _animNum);
+				_animTimer2 = setInterval(function(){
+						if ( _animState < _animNextState ) {
+							_animState++;
+						} else if ( _animState > _animNextState ) {
+							_animState--;
+						} else {
+							clearInterval(_animTimer2);
+							bgAnim();
+						}
+						if ( _animState > 36 ) {
+							_animState = 36;
+							_animNextState = 36;
+						}
+						$('.bg__inner__item').attr('data-active', false).eq(_animState).attr('data-active', true);
+				}, 30);
+			}
+		}, 20);
+
+		var _footer = Math.floor($('.footer').offset().top - $window.height());
+		if ( $('.header').outerHeight() > $window.scrollTop() ) {
+			TweenMax.to('.bg' , 0.1 , {
+				y: $('.header').outerHeight() - $window.scrollTop()
+			});
+		} else if ( $window.scrollTop() > _footer ) {
+			TweenMax.to('.bg' , 0.1 , {
+				y: _footer - $window.scrollTop()
+			});
+		} else {
+			TweenMax.to('.bg' , 0.1 , {
+				y: 0
+			});
+		}
+	}
+	bgAnim();
+
+	//nav
 	$('#floatNav').append($('#nav a').clone());
 
 	//modal

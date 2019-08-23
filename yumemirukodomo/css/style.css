@@ -176,14 +176,26 @@ Base Media Queries PC
   z-index: 1; }
 
 .bg__inner {
+  position: relative;
   width: 100%;
-  max-width: 1280px;
-  background: url(../img/bg_anime.gif) no-repeat center top;
-  background-size: 100% auto; }
+  max-width: 1280px; }
   .bg__inner::before {
     content: "";
     display: block;
     padding-top: 64.05694%; }
+
+.bg__inner__item {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  visibility: hidden; }
+  .bg__inner__item[data-active=true] {
+    visibility: visible; }
 
 /*================================
 	section
@@ -595,9 +607,25 @@ Base Media Queries PC
   .modal[data-active=true] {
     opacity: 1;
     pointer-events: auto; }
+    .modal[data-active=true] .modal__inner {
+      -moz-transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+      transform: scale(1, 1); }
+      .modal[data-active=true] .modal__inner::before, .modal[data-active=true] .modal__inner::after {
+        opacity: 1; }
 
 .modal__inner {
-  position: relative; }
+  position: relative;
+  -moz-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  -webkit-transform: scale(0, 0);
+  transform: scale(0, 0);
+  -moz-transition: all 0.2s 0.2s;
+  -o-transition: all 0.2s 0.2s;
+  -webkit-transition: all 0.2s;
+  -webkit-transition-delay: 0.2s;
+  transition: all 0.2s 0.2s; }
   .modal__inner::before, .modal__inner::after {
     content: "";
     position: absolute;
@@ -607,7 +635,12 @@ Base Media Queries PC
     width: 30px;
     height: 2px;
     background-color: #fff;
-    cursor: pointer; }
+    opacity: 0;
+    cursor: pointer;
+    -moz-transition: all 0s;
+    -o-transition: all 0s;
+    -webkit-transition: all 0s;
+    transition: all 0s; }
   .modal__inner::before {
     -moz-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
@@ -620,7 +653,13 @@ Base Media Queries PC
     transform: rotate(-45deg); }
 
 .openModal {
-  cursor: pointer; }
+  cursor: pointer;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s; }
+  .openModal:hover {
+    opacity: 0.8; }
   .openModal iframe {
     pointer-events: none; }
 
@@ -882,5 +921,14 @@ Base Media Queries SP
     top: -18px;
     width: 22px;
     height: 2px; }
-  .modal__inner .tokuten__item__txt {
-    text-align: center; } }
+  .modal__inner .tokuten__item__txt,
+  .modal__inner .goods__item__txt {
+    text-align: center; }
+
+  .openModal {
+    -moz-transition: all 0;
+    -o-transition: all 0;
+    -webkit-transition: all 0;
+    transition: all 0; }
+    .openModal:hover {
+      opacity: 1; } }

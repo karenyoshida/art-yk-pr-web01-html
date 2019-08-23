@@ -72,7 +72,7 @@ $(function(){
 		for(var i = 0; i <= 36; i++) {
 			$('.bg__inner').append('<div class="bg__inner__item"><!--/.bg__inner__item--></div>');
 			$('.bg__inner__item').eq(i).css({
-				'background-image': 'url(../img/bg_anime' + ( i + 1 ) + '.gif)'
+				'background-image': 'url(./img/bg_anime' + ( i + 1 ) + '.gif)'
 			});
 		}
 		$('.bg__inner__item').attr('data-active', false).eq(0).attr('data-active', true);

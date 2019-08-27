@@ -48,6 +48,21 @@ $(function(){
 		} else {
 			$('#floatNav').attr('data-active', false);
 		}
+
+		var _footer = Math.floor($('.footer').offset().top - $window.height());
+		if ( $('.header').outerHeight() > $window.scrollTop() ) {
+			TweenMax.to('.bg' , 0 , {
+				y: $('.header').outerHeight() - $window.scrollTop()
+			});
+		} else if ( $window.scrollTop() > _footer ) {
+			TweenMax.to('.bg' , 0 , {
+				y: _footer - $window.scrollTop()
+			});
+		} else {
+			TweenMax.to('.bg' , 0 , {
+				y: 0
+			});
+		}
 	};
 
 	var _scrollFlg = false;
@@ -65,12 +80,12 @@ $(function(){
 	var _animTimer1;
 	var _animTimer2;
 	var _animState = 0;
-	var _animNum = 37 + 3;
+	var _animNum = 38 + 3;
 	var _scrollT = 0;
 	var _imageLoaded = false;
 
 	$window.on('load', function(e){
-		for(var i = 0; i <= 37; i++) {
+		for(var i = 0; i <= 38; i++) {
 			$('.bg__inner').append('<div class="bg__inner__item"><!--/.bg__inner__item--></div>');
 			$('.bg__inner__item').eq(i).css({
 				'background-image': 'url(./img/bg_anime' + ( i + 1 ) + '.gif)'
@@ -99,9 +114,9 @@ $(function(){
 							clearInterval(_animTimer2);
 							bgAnim();
 						}
-						if ( _animState > 37 ) {
-							_animState = 37;
-							_animNextState = 37;
+						if ( _animState > 38 ) {
+							_animState = 38;
+							_animNextState = 38;
 						}
 						if ( _imageLoaded ) {
 							$('.bg__inner__item').attr('data-active', false).eq(_animState).attr('data-active', true);
@@ -109,28 +124,13 @@ $(function(){
 				}, 30);
 			}
 		}, 20);
-
-		var _footer = Math.floor($('.footer').offset().top - $window.height());
-		/*if ( $('.header').outerHeight() > $window.scrollTop() ) {
-			TweenMax.to('.bg' , 0 , {
-				y: $('.header').outerHeight() - $window.scrollTop()
-			});
-		} else if ( $window.scrollTop() > _footer ) {
-			TweenMax.to('.bg' , 0 , {
-				y: _footer - $window.scrollTop()
-			});
-		} else {
-			TweenMax.to('.bg' , 0 , {
-				y: 0
-			});
-		}*/
 	}
 	$('.header').imagesLoaded( function() {
 		$('#bg__images').imagesLoaded( function() {
 			_imageLoaded = true;
 
 			var _footer = Math.floor($('.footer').offset().top - $window.height());
-			/*if ( $('.header').outerHeight() > $window.scrollTop() ) {
+			if ( $('.header').outerHeight() > $window.scrollTop() ) {
 				TweenMax.to('.bg' , 0 , {
 					y: $('.header').outerHeight() - $window.scrollTop()
 				});
@@ -142,7 +142,7 @@ $(function(){
 				TweenMax.to('.bg' , 0 , {
 					y: 0
 				});
-			}*/
+			}
 			$('.bg__inner').attr('data-active', true);
 		});
 	});

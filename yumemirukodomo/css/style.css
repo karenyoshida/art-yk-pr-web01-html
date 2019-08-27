@@ -395,50 +395,9 @@ Base Media Queries PC
   .track__list__item + .track__list__item {
     border-top: 1px solid #535353; }
   .track__list__item::before {
-    content: "";
     display: inline-block;
     margin-right: 30px;
     margin-left: 40px; }
-  .track__list__item:nth-child(1)::before {
-    content: "1"; }
-  .track__list__item:nth-child(2)::before {
-    content: "2"; }
-  .track__list__item:nth-child(3)::before {
-    content: "3"; }
-  .track__list__item:nth-child(4)::before {
-    content: "4"; }
-  .track__list__item:nth-child(5)::before {
-    content: "5"; }
-  .track__list__item:nth-child(6)::before {
-    content: "6"; }
-  .track__list__item:nth-child(7)::before {
-    content: "7"; }
-  .track__list__item:nth-child(8)::before {
-    content: "8"; }
-  .track__list__item:nth-child(9)::before {
-    content: "9"; }
-  .track__list__item:nth-child(10)::before {
-    content: "10"; }
-  .track__list__item:nth-child(11)::before {
-    content: "11"; }
-  .track__list__item:nth-child(12)::before {
-    content: "12"; }
-  .track__list__item:nth-child(13)::before {
-    content: "13"; }
-  .track__list__item:nth-child(14)::before {
-    content: "14"; }
-  .track__list__item:nth-child(15)::before {
-    content: "15"; }
-  .track__list__item:nth-child(16)::before {
-    content: "16"; }
-  .track__list__item:nth-child(17)::before {
-    content: "17"; }
-  .track__list__item:nth-child(18)::before {
-    content: "18"; }
-  .track__list__item:nth-child(19)::before {
-    content: "19"; }
-  .track__list__item:nth-child(20)::before {
-    content: "20"; }
 
 .track__notes {
   font-size: 1.6rem;

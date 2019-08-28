@@ -381,6 +381,8 @@ Base Media Queries PC
     background-image: url(../img/btn_album_animate_on.png); }
   .album__cols__btn__link.-hmv {
     background-image: url(../img/btn_album_hmv_on.png); }
+  .album__cols__btn__link.-rakuten {
+    background-image: url(../img/btn_album_rakuten_on.png); }
 
 /*================================
 	track
@@ -744,7 +746,7 @@ Base Media Queries SP
 
   .album__cols__btn__link img:hover {
     opacity: 1; }
-  .album__cols__btn__link.-amazon, .album__cols__btn__link.-tower, .album__cols__btn__link.-tsutaya, .album__cols__btn__link.-animate, .album__cols__btn__link.-hmv {
+  .album__cols__btn__link.-amazon, .album__cols__btn__link.-tower, .album__cols__btn__link.-tsutaya, .album__cols__btn__link.-animate, .album__cols__btn__link.-hmv, .album__cols__btn__link.-rakuten {
     background-image: none; }
 
   /*================================
